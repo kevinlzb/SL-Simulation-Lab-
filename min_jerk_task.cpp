@@ -52,8 +52,6 @@ min_jerk_next_step (double x,double xd, double xdd, double t, double td, double 
 /*****************************************************************************
 ******************************************************************************
 Function Name	: add_min_jerk_task
-Date		: Feb 1999
-Remarks:
 
 adds the task to the task menu
 
@@ -76,7 +74,6 @@ add_min_jerk_task( void )
 /*****************************************************************************
 ******************************************************************************
   Function Name	: init_min_jerk_task
-  Date		: Dec. 1997
 
   Remarks:
 
@@ -145,7 +142,6 @@ init_min_jerk_task(void)
 /*****************************************************************************
 ******************************************************************************
   Function Name	: run_min_jerk_task
-  Date		: Dec. 1997
 
   Remarks:
 
@@ -164,9 +160,7 @@ run_min_jerk_task(void)
 
   double task_time;
 
-  // ******************************************
   // NOTE: all array indices start with 1 in SL
-  // ******************************************
 
   task_time = task_servo_time - start_time;
 
@@ -222,7 +216,6 @@ run_min_jerk_task(void)
 /*****************************************************************************
 ******************************************************************************
   Function Name	: change_min_jerk_task
-  Date		: Dec. 1997
 
   Remarks:
 
@@ -275,7 +268,6 @@ min_jerk_next_step (double x,double xd, double xdd, double t, double td, double 
 
 {
 
-  // your code goes here ...
  switch(type){
      case 1:{
    *x_next= x + xd*dt + 0.5*xdd*pow(dt,2) - ((20*x-20*t+12*xd*t_togo+8*td*t_togo+3*xdd*pow(t_togo,2)-tdd*pow(t_togo,2))/(2*pow(t_togo,3)))*pow(dt,3) + ((30*x-30*t+16*xd*t_togo+14*td*t_togo+3*xdd*pow(t_togo,2)-2*tdd*pow(t_togo,2))/(2*pow(t_togo,4)))*pow(dt,4) - ((12*x-12*t+6*xd*t_togo+6*td*t_togo+xdd*pow(t_togo,2)-tdd*pow(t_togo,2))/(2*pow(t_togo,5)))*pow(dt,5);
