@@ -1,14 +1,3 @@
-/*============================================================================
-==============================================================================
-                      
-                              min_jerk_task.cpp
- 
-==============================================================================
-Remarks:
-
-      sekeleton to create the sample task
-
-============================================================================*/
 
 // system headers
 #include "SL_system_headers.h"
@@ -48,19 +37,6 @@ min_jerk_next_step (double x,double xd, double xdd, double t, double td, double 
 		    double t_togo, double dt,
 		    double *x_next, double *xd_next, double *xdd_next);
 
-
-/*****************************************************************************
-******************************************************************************
-Function Name	: add_min_jerk_task
-
-adds the task to the task menu
-
-******************************************************************************
-Paramters:  (i/o = input/output)
-
-none
-
-*****************************************************************************/
 void
 add_min_jerk_task( void )
 {
@@ -71,20 +47,7 @@ add_min_jerk_task( void )
 
 }    
 
-/*****************************************************************************
-******************************************************************************
-  Function Name	: init_min_jerk_task
 
-  Remarks:
-
-  initialization for task
-
-******************************************************************************
-  Paramters:  (i/o = input/output)
-
-       none
-
- *****************************************************************************/
 static int 
 init_min_jerk_task(void)
 {
@@ -139,20 +102,6 @@ init_min_jerk_task(void)
   return TRUE;
 }
 
-/*****************************************************************************
-******************************************************************************
-  Function Name	: run_min_jerk_task
-
-  Remarks:
-
-  run the task from the task servo: REAL TIME requirements!
-
-******************************************************************************
-  Paramters:  (i/o = input/output)
-
-  none
-
- *****************************************************************************/
 static int 
 run_min_jerk_task(void)
 {
@@ -213,20 +162,7 @@ run_min_jerk_task(void)
   return TRUE;
 }
 
-/*****************************************************************************
-******************************************************************************
-  Function Name	: change_min_jerk_task
 
-  Remarks:
-
-  changes the task parameters
-
-******************************************************************************
-  Paramters:  (i/o = input/output)
-
-  none
-
- *****************************************************************************/
 static int 
 change_min_jerk_task(void)
 {
@@ -241,26 +177,7 @@ change_min_jerk_task(void)
 }
 
 
-/*!*****************************************************************************
- *******************************************************************************
-\note  min_jerk_next_step
-\date  April 2014
-   
-\remarks 
 
-Given the time to go, the current state is updated to the next state
-using min jerk splines
-
- *******************************************************************************
- Function Parameters: [in]=input,[out]=output
-
- \param[in]          x,xd,xdd : the current state, vel, acceleration
- \param[in]          t,td,tdd : the target state, vel, acceleration
- \param[in]          t_togo   : time to go until target is reached
- \param[in]          dt       : time increment
- \param[in]          x_next,xd_next,xdd_next : the next state after dt
-
- ******************************************************************************/
 static int 
 min_jerk_next_step (double x,double xd, double xdd, double t, double td, double tdd,
 		    double t_togo, double dt,

@@ -1,9 +1,3 @@
-/*!=============================================================================
-  ==============================================================================
-
-                                draw_task.cpp
-
-
 
 // SL general includes of system headers
 #include "SL_system_headers.h"
@@ -50,19 +44,7 @@ static int  calculate_min_jerk_next_step (SL_Cstate *curr_state,
 					  double delta_t,
 					  SL_Cstate *next_states);
  
-/*!*****************************************************************************
- *******************************************************************************
-\note  add_draw_task
-\remarks 
 
-adds the task to the task menu
-
- *******************************************************************************
- Function Parameters: [in]=input,[out]=output
-
-none
-
- ******************************************************************************/
 void
 add_draw_task( void )
 
@@ -86,20 +68,7 @@ add_draw_task( void )
 
 }    
 
-/*!*****************************************************************************
- *******************************************************************************
-  \note  init_draw_task
 
-  \remarks 
-
-  initialization for task
-
- *******************************************************************************
- Function Parameters: [in]=input,[out]=output
-
-       none
-
- ******************************************************************************/
 static int 
 init_draw_task(void)
 {
@@ -180,20 +149,7 @@ init_vars(void)
   }
 }
 
-/*!*****************************************************************************
- *******************************************************************************
-  \note  run_goto_task
 
-  \remarks 
-
-  run the task from the task servo: REAL TIME requirements!
-
- *******************************************************************************
- Function Parameters: [in]=input,[out]=output
-
-  none
-
- ******************************************************************************/
 static int 
 run_draw_task(void)
 {
@@ -279,20 +235,7 @@ run_draw_task(void)
 
 }
 
-/*!*****************************************************************************
- *******************************************************************************
-  \note  change_draw_task
 
-  \remarks 
-
-  changes the task parameters
-
- *******************************************************************************
- Function Parameters: [in]=input,[out]=output
-
-  none
-
- ******************************************************************************/
 static int 
 change_draw_task(void)
 {
@@ -302,30 +245,6 @@ change_draw_task(void)
 
 }
 
-/*!*****************************************************************************
- *******************************************************************************
-\note  calculate_min_jerk_next_step
-   
-\remarks 
-
-        given a current cart state and a target cart
-	state as well as movement duration, the next increment
-	for the cart states is calculated. Note that this 
-	is done in only in cartesian dimensions with active status.
-	NOTE that this function requires velocity and accelerations
-	as input as well!!!
-
- *******************************************************************************
- Function Parameters: [in]=input,[out]=output
-
- \param[in]     curr_states: the current state
- \param[in]     des_states : the desired state
- \param[in]     tau        : the desired movement duration until the goal is
-	                 reached.
- \param[in]     dt         : at which delta time is the next_states from now
- \param[out]    next_states: the next state after dt
-
- ******************************************************************************/
 static int 
 calculate_min_jerk_next_step (SL_Cstate *curr_state,
 			      SL_Cstate *des_state,
